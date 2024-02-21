@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+</head>
+<body>
+    <h2>User Management</h2>
+    
+    <!-- Form to list users -->
+    <form action="/listUsers" method="get">
+        <button type="submit">List Users</button>
+    </form>
+    
+    <!-- Form to view a specific user -->
+    <form id="viewUserForm" action="/user/:id" method="get">
+        <label for="userId">Enter User ID:</label>
+        <input type="text" id="userId" name="id" required>
+        <button type="submit">View User</button>
+    </form>
+    
+    <!-- Form to add a new user -->
+    <h3>Add New User</h3>
+    <form id="addUserForm" action="/addUser" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        <label for="profession">Profession:</label>
+        <select id="profession" name="profession">
+            <option value="teacher">Teacher</option>
+            <option value="librarian">Librarian</option>
+            <option value="doctor">Doctor</option>
+        </select><br>
+        <button type="submit">Add User</button>
+    </form>
+
+    <!-- Form to delete a user -->
+    <h3>Delete User</h3>
+    <form id="deleteUserForm" action="/deleteUser" method="post">
+        <label for="deleteUserId">Enter User ID to Delete:</label>
+        <input type="text" id="deleteUserId" name="id" required>
+        <button type="submit">Delete User</button>
+    </form>
+    
+    <!-- Container to display user information -->
+    <div id="userInfo"></div>
+    
+</body>
+</html>
+
